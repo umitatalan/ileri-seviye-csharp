@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace ileri_seviye_csharp
 {
@@ -6,11 +7,29 @@ namespace ileri_seviye_csharp
     {
         static void Main(string[] args)
         {
-            int[,] dizi = { { -1, 7 }, { 5, 1 }, { 9, -8 } };
-            Console.WriteLine(dizi[2, 1]);
+            int[] sayilar = new int[5] { 1,2,3,4,5 };
 
-            int[,,] dizi2 = { { { 1, 5 }, { 5, 9 }, { 1, -1 } }, { { -2, 2 }, { 4, -4 }, { 9, 0 } } };
-            Console.WriteLine(dizi2[1, 1, 1]);
+            List<int> numbers = new List<int>(sayilar);
+            numbers.Add(21);
+            numbers.Add(1);
+
+            foreach (var item in numbers)
+            {
+                Console.WriteLine(item);
+            }
+
+            Console.WriteLine("-----");
+
+            numbers.Remove(4);
+
+            foreach (var item in numbers)
+            {
+                Console.WriteLine(item);
+            }
+
+            Console.WriteLine("Dizi uzunluğu : " + numbers.Count);
+            Console.WriteLine(numbers.BinarySearch(21));
+            Console.WriteLine(numbers[5]);
 
             Console.ReadLine();
         }
