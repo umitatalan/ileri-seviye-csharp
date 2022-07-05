@@ -8,43 +8,51 @@ namespace ileri_seviye_csharp
 
         static void Main(string[] args)
         {
-            //Overloading
+            //Enums
+            Person person = new Person(Schools.YüksekOkul);
 
-            Console.WriteLine(topla(5,1));
-            Console.WriteLine(topla(1,7,3));
-            Console.WriteLine(topla(5.3,5.9));
+            if (person.school.Equals(Schools.Lise))
+            {
+                Console.WriteLine("ABC");
+            }
+            else if (person.school.Equals(Schools.YüksekOkul))
+            {
+                Console.WriteLine("DEF");
+            }
+            else if (person.school.Equals(Schools.Lisans))
+            {
+                Console.WriteLine("GHİ");
+            }
 
-            yazdir(5);
-            yazdir("Text");
+            Console.WriteLine((int)Schools.Lisans);
+
+            Console.WriteLine(Enum.Parse(typeof(Schools), "0"));
+
+            Console.WriteLine(Enum.GetName(typeof(Schools), 1));
+
+            string[] scholls = Enum.GetNames(typeof(Schools));
+
+            foreach (var item in scholls)
+            {
+                Console.WriteLine(item);
+            }
 
             Console.ReadLine();
         }
 
-        static int topla(int a, int b)
+        class Person
         {
-            return a + b;
+            public Schools school;
+
+            public Person(Schools school)
+            {
+                this.school = school;
+            }
         }
 
-        static int topla(int a, int b, int c)
+        enum Schools
         {
-            return a + b + c;
+            Lise, YüksekOkul, Lisans
         }
-        
-        static double topla(double a, double b)
-        {
-            return a + b;
-        }
-        
-        static void yazdir(int sayi)
-        {
-            Console.WriteLine(sayi.ToString());
-        }
-
-        static void yazdir(string metin)
-        {
-            Console.WriteLine(metin);
-        }
-
-
     }
 }
