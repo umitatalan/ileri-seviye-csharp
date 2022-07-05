@@ -8,18 +8,10 @@ namespace ileri_seviye_csharp
 
         static void Main(string[] args)
         {
-            Sinif sinif = new Sinif();
-            Console.WriteLine(sinif.x);
-            sinif.yazdir("Merhaba");
+            //public : Her yerden ulaşılabilir.
+            //private : özeldir. Sadece sınıf içerisinden ulaşılabilir.
+            //internal : Aynı namespace'de ulaşılabilir.
 
-            Kisi kisi1 = new Kisi();
-            kisi1.Ad = "Ahmet";
-            kisi1.Soyad = "Mehmet";
-            kisi1.Yas = 39;
-            kisi1.OzellikleriYaz();
-
-            Kisi kisi2 = new Kisi() { Ad = "Mehmet", Soyad = "Alnıaçık", Yas = 41 };
-            kisi2.OzellikleriYaz();
 
             Console.ReadLine();
         }
