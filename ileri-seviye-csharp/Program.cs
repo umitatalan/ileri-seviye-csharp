@@ -8,10 +8,8 @@ namespace ileri_seviye_csharp
 
         static void Main(string[] args)
         {
-            //public : Her yerden ulaşılabilir.
-            //private : özeldir. Sadece sınıf içerisinden ulaşılabilir.
-            //internal : Aynı namespace'de ulaşılabilir.
-
+            Kisi ilkkisi = new Kisi("ABC", "XYZ", 37);
+            ilkkisi.OzellikleriYaz();
 
             Console.ReadLine();
         }

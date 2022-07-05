@@ -8,9 +8,16 @@ namespace ileri_seviye_csharp
 {
     class Kisi
     {
-        public string Ad;
-        public string Soyad;
-        public int Yas;
+        private string Ad;
+        private string Soyad;
+        private int Yas;
+
+        public Kisi(string ad, string soyad, int yas)
+        {
+            Ad = ad;
+            Soyad = soyad;
+            Yas = yas;
+        }
 
         public void OzellikleriYaz()
         {
